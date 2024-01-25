@@ -1,89 +1,169 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    background: url(./circles-background.avif) center/cover no-repeat;
-    height: 100lvh;
+  font-family: "Roboto", sans-serif;
+  background: url(./circles-background.avif) center/cover no-repeat;
+  height: 100lvh;
+  margin-top: 3rem;
+  overflow: hidden;
 }
-
+.main-name {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
 .box {
-      display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px;  
-    min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-    .main {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        background-color: antiquewhite;
-        width: 350px;
-        height: 200px;
-        font-size: 1rem;
-        border-radius: 0.5rem;
-        letter-spacing: 2px;
-        justify-content: space-around;
-    }
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
-
-
- .title {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
-     width: 122px;
-     height: 200px;
-     align-items: flex-start;
-     font-size: 1rem;
- }
-
+.score-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  gap: 2rem;
+}
 
 .score {
-    background-color: #000;
-    color: #fff;
+  font-weight: 900;
+  color: #fff;
 }
-.lifes {
-    color: red ;
-    font-weight: 900;
-    text-transform: uppercase; 
+.lives {
+  color: red;
+  font-weight: 900;
+  text-transform: uppercase;
 }
-.best {
-    background-color: gold;
+.best-score {
+  color: white;
+  font-weight: 900;
 }
 
-.grid-container { 
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 1rem;
+.grid-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
 }
 
 .btn {
-    padding: 15px 20px; 
-    font-size: 2rem; 
-    border: none; 
-    /* background-color: #4CAF50;  */
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px; 
-    transition-duration: 0.4s; 
+  padding: 20px 28px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: aliceblue;
+  color: gray;
+  border: 2px solid gray;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 .btn:hover {
-    background-color: gray;
-    color: white;
-    transform: scale(1.1); 
+  transform: scale(1.1);
+  border-color: black;
+}
+
+.success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.wrong {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.shown {
+  color: initial;
+}
+
+.hidden {
+  color: transparent;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 4rem 3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 62px;
+}
+.modal1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content1 {
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 62px;
+}
+.lose-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.restart {
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+  border: none;
+  background-color: white;
+}
+
+.congratulations {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  visibility: hidden;
+}
+
+.praise {
+  color: #2ecc71;
+  font-weight: 900;
+  visibility: visible;
 }
