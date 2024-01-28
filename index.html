@@ -5,42 +5,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="./memory.png" />
+    <link rel="shortcut icon" href="./images/memory.png" />
   </head>
   <body>
+    <!-- аудио правильных и не правильных ответов -->
     <audio id="wrongAudio" src="./sounds/wrong-answer.mp3"></audio>
     <audio id="correctAudio" src="./sounds/correct-answer.mp3"></audio>
-    <audio id="gameOverAudio" src="./sounds/game-over.mp3"></audio>
+    <!-- название игры -->
     <h1 class="main-name">Memory <span style="color: green">Game</span></h1>
+
     <section class="box">
-      <div id="modal1">
-        <div class="modal-content2"></div>
-      </div>
       <main class="main">
+        <!-- счет  -->
         <div class="score-container">
           <p class="score">Score: <span id="score">0</span></p>
           <p class="best-score">Best Score: <span id="best-score">0</span></p>
           <p class="lives"><span id="lives">❤ ❤ ❤</span></p>
         </div>
 
+        <!-- окно проигрыша -->
         <div id="modal" class="modal">
           <div class="modal-content">
-            <p class="lose-text">
-              You lose 🤔 ! <br />
-              Do you want to start over?
-            </p>
-            <button class="restart">🔄</button>
+            <h2 class="lose">-YOU LOSE-</h2>
+            <p class="lose-text">Do you want to start over?</p>
+            <button class="do-nothing">NO</button>
+            <button class="restart">YES</button>
           </div>
         </div>
-        <div class="grid-container">
-          <button class="btn">2</button>
-          <button class="btn">1</button>
-          <button class="btn">1</button>
-          <button class="btn">2</button>
-        </div>
+
+        <!-- кнопки -->
+        <div class="grid-container myDiv"></div>
+
+        <!-- хвалить! -->
         <p class="congratulations" class="">Well Done!</p>
       </main>
     </section>
-    <script src="./app.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

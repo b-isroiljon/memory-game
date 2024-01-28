@@ -8,7 +8,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: url(./circles-background.avif) center/cover no-repeat;
+  background: url(./images/photo.avif) center/cover no-repeat;
   height: 100lvh;
   margin-top: 3rem;
   overflow: hidden;
@@ -46,7 +46,7 @@ body {
 
 .score {
   font-weight: 900;
-  color: #fff;
+  color: #fdf8e6;
 }
 .lives {
   color: red;
@@ -54,14 +54,14 @@ body {
   text-transform: uppercase;
 }
 .best-score {
-  color: white;
+  color: #fdf8e6;
   font-weight: 900;
 }
 
 .grid-container {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto auto auto;
   gap: 0.3rem;
 }
 
@@ -70,18 +70,13 @@ body {
   font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
-  background-color: aliceblue;
-  color: gray;
+  background-color: #282a3a;
+  color: #fdf8e6;
   border: 2px solid gray;
   border-radius: 8px;
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-  border-color: black;
 }
 
 .success {
@@ -95,7 +90,7 @@ body {
 }
 
 .shown {
-  color: initial;
+  color: #fdf8e6;
 }
 
 .hidden {
@@ -112,48 +107,52 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1;
 }
 
 .modal-content {
-  background-color: #fff;
-  padding: 4rem 3rem;
-  text-align: center;
+  background-color: darkgray;
   border-radius: 0.5rem;
-  margin-bottom: 62px;
-}
-.modal1 {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
+  border: 3px double red;
+  margin-bottom: 12rem;
+  width: 30rem;
+  height: 15rem;
+  text-align: center;
 }
 
-.modal-content1 {
-  background-color: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 0.5rem;
-  margin-bottom: 62px;
+.lose {
+  color: #b82222;
+  border-bottom: 4px dotted #b82222;
+  font-size: 2rem;
+  padding: 20px;
 }
+
 .lose-text {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 3px;
+  margin-top: 25px;
 }
 
 .restart {
   margin-top: 2rem;
   cursor: pointer;
-  font-size: 2.5rem;
-  border: none;
-  background-color: white;
+  font-size: 1.5rem;
+  border: 1px solid green;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: darkgreen;
+}
+
+.do-nothing {
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: darkgray;
 }
 
 .congratulations {
@@ -163,7 +162,7 @@ body {
 }
 
 .praise {
-  color: #2ecc71;
+  color: darkgreen;
   font-weight: 900;
   visibility: visible;
 }
