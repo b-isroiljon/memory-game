@@ -17,7 +17,6 @@ infoButton.addEventListener("click", () => {
   infoModal.style.display = "flex"
 })
 
-
 closer.addEventListener("click", () => {
   infoModal.style.display = "none"
 })
@@ -25,12 +24,6 @@ window.addEventListener("click", (event) => {
   if(event.target == infoModal)infoModal.style.display = "none";
 })
 
-
-
-
-
-
-// TODO: need to check correctness
 const generateNums = (rows, cols) => {
   const uniqs = {};
   const numOfUniqs = rows * 2;
@@ -114,6 +107,7 @@ const showGameOverModal = () => {
     rows = 1;
     gameInit();
     modal.style.display = "none";
+   startButton.style.display = "block"
   });
 };
 
@@ -134,8 +128,7 @@ const handleWrongButtons = (button) => {
 const showCongrats = () => {
   const praise = document.querySelector(".congratulations");
   praise.classList.add("praise");
-  setTimeout(() => praise.classList.remove("praise"), delay);
-  startButton.style.display = "block"
+  setTimeout(() => praise.classList.remove("praise"), delay); 
 };
 
 const checkIfAllCorrect = () => {
