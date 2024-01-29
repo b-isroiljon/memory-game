@@ -129,6 +129,7 @@ const showCongrats = () => {
   const praise = document.querySelector(".congratulations");
   praise.classList.add("praise");
   setTimeout(() => praise.classList.remove("praise"), delay); 
+  
 };
 
 const checkIfAllCorrect = () => {
@@ -139,6 +140,7 @@ const checkIfAllCorrect = () => {
 
   if (!isAllcorrect) return;
   if (rows < 4) rows++;
+  startButton.style.display = "block"
   showCongrats();
   gameInit();
 };
