@@ -6,8 +6,29 @@ let cols = 4;
 let delay = 1000;
 let score = 0;
 let opened = null;
-let = bestScore = 0;
+let bestScore = 0;
 let lives = 3;
+
+const infoButton = document.getElementById("infoButton")
+const infoModal = document.getElementById("infoModal")
+const closer = document.querySelector(".close")
+
+infoButton.addEventListener("click", () => {
+  infoModal.style.display = "flex"
+})
+
+
+closer.addEventListener("click", () => {
+  infoModal.style.display = "none"
+})
+window.addEventListener("click", (event) => {
+  if(event.target == infoModal)infoModal.style.display = "none";
+})
+
+
+
+
+
 
 // TODO: need to check correctness
 const generateNums = (rows, cols) => {
@@ -55,6 +76,7 @@ const createButtonsFromHtmlArray = (buttonArray) => {
 
 const startGame = () => {
   startButton.addEventListener("click", () => {
+    startButton.style.display = "none"
   const buttons = document.querySelectorAll(".grid-container .btn");
     buttons.forEach((button) => {
       setTimeout(() => {
@@ -113,6 +135,7 @@ const showCongrats = () => {
   const praise = document.querySelector(".congratulations");
   praise.classList.add("praise");
   setTimeout(() => praise.classList.remove("praise"), delay);
+  startButton.style.display = "block"
 };
 
 const checkIfAllCorrect = () => {

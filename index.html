@@ -5,22 +5,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="./images/memory.png" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.12.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./images/memory.png" type="image/x-icon" />
   </head>
   <body>
     <!-- аудио правильных и не правильных ответов -->
     <audio id="wrongAudio" src="./sounds/wrong-answer.mp3"></audio>
     <audio id="correctAudio" src="./sounds/correct-answer.mp3"></audio>
     <!-- название игры -->
-    <h1 class="main-name">Memory <span style="color: green">Game</span></h1>
+    <h1 class="main-name">Memory <span style="color: green">Game</span><button id="infoButton" class="info"><i class="fa-solid fa-circle-info"></i></button></h1>
 
+    
+    <div id="infoModal" class="modal1">
+      <div class="modal-content1">
+        <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        <h3 class="game-name">Название игры: "Найди пары"</h3>
+        <p class="info-text">Игра "Найди пары" — это увлекательное развлечение, целью которого является поиск и сопоставление одинаковых элементов на игровом поле. Эта игра развивает внимание, память и концентрацию игрока, предоставляя ему увлекательный способ провести время.</p>
+      </div>
+    </div>
+    
     <section class="box">
+      
       <main class="main">
         <!-- счет  -->
         <div class="score-container">
           <p class="score">Score: <span id="score">0</span></p>
           <p class="best-score">Best Score: <span id="best-score">0</span></p>
-          <p class="lives"><span id="lives">❤ ❤ ❤</span></p>
+          <p class="lives"><span id="lives">❤❤❤</span></p>
         </div>
 
         <!-- окно проигрыша -->
@@ -28,11 +49,10 @@
           <div class="modal-content">
             <h2 class="lose">-YOU LOSE-</h2>
             <p class="lose-text">Do you want to start over?</p>
-            <button class="do-nothing">NO</button>
             <button class="restart">YES</button>
           </div>
         </div>
-        <button id="start">START</button>
+        <button id="start">Click To Start</button>
         <!-- кнопки -->
         <div class="grid-container myDiv"></div>
 
