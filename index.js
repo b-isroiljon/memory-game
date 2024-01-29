@@ -1,6 +1,6 @@
 const wrongAnswer = document.getElementById("wrongAudio");
 const correctAnswer = document.getElementById("correctAudio");
-
+const startButton = document.getElementById("start");
 let rows = 1;
 let cols = 4;
 let delay = 1000;
@@ -28,15 +28,16 @@ const generateNums = (rows, cols) => {
   return nums;
 };
 
+
 const createButton = (nums) =>
-  nums.map((row) =>
-    row.map((num) => {
-      const btn = document.createElement("button");
-      btn.className = "btn";
-      btn.innerHTML = num;
-      return btn;
-    })
-  );
+nums.map((row) =>
+row.map((num) => {
+  const btn = document.createElement("button");
+  btn.className = "btn";
+  btn.innerHTML = num;
+  return btn;
+})
+);
 
 const createButtonsFromHtmlArray = (buttonArray) => {
   const container = document.querySelector(".grid-container");
@@ -45,13 +46,24 @@ const createButtonsFromHtmlArray = (buttonArray) => {
     row.forEach((button) => {
       container.appendChild(button);
       setTimeout(() => {
-        button.classList.toggle("hidden", true);
-        button.addEventListener("click", handleOpenButton);
+        button.classList.toggle("hidden", false);
       }, delay);
+      startGame();
     });
   });
 };
 
+const startGame = () => {
+  startButton.addEventListener("click", () => {
+  const buttons = document.querySelectorAll(".grid-container .btn");
+    buttons.forEach((button) => {
+      setTimeout(() => {
+      button.classList.toggle("hidden", true)
+      button.addEventListener("click", handleOpenButton);
+    }, delay);
+    })
+  });
+}
 const updateDisplay = () => {
   document.querySelector("#score").textContent = score;
   document.querySelector("#lives").innerHTML = "❤".repeat(lives);
@@ -150,6 +162,7 @@ const handleOpenButton = (event) => {
     secondButton(button);
   }
 };
+
 
 const gameInit = () => {
   setTimeout(() => {
